@@ -1,0 +1,20 @@
+[package]
+name = "token-source"
+version = "1.0.0"
+authors = ["yoshidan <naohiro.y@gmail.com>", "nvivot <vivot.nicolas@gmail.com>"]
+edition = "2021"
+repository = "https://github.com/nicolas-vivot/token-source/tree/main"
+keywords = ["authentication","token","token-source"]
+license = "MIT"
+readme = "README.md"
+description = "High level API for token source providers."
+
+[lib]
+doctest = false
+
+[features]
+default = ["async-token-source"]
+async-token-source = ["dep:async-trait"]
+
+[dependencies]
+async-trait = { version = "0.1", optional = true }
