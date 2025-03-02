@@ -66,4 +66,4 @@ jobs:
       - name: cargo-test
         env:
           RUSTFLAGS: "-A dead_code -A unused"
-        run: cargo test --release --all-features --manifest-path pubsub/Cargo.toml
+        run: cargo test --release --all-features
