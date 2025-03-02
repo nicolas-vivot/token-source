@@ -8,6 +8,7 @@ keywords = ["authentication","token","token-source"]
 license = "MIT"
 readme = "README.md"
 description = "High level API for token source providers."
+exclude = [".githooks", ".github", "Makefile"]
 
 [lib]
 doctest = false
