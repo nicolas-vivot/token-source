@@ -21,7 +21,7 @@ use async_trait::async_trait;
 
 /// A TokenSource abstracts how a token is obtained or generated.
 ///
-/// This is where you would implement the logic to fetch a token from a local cache, 
+/// This is where you would implement the logic to fetch a token from a local cache,
 /// or a remote server (for example requesting a new token from an OAuth2 server).
 #[cfg(feature = "async-token-source")]
 #[async_trait]
