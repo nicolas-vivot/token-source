@@ -13,8 +13,8 @@ description = "High level API for token source providers."
 doctest = false
 
 [features]
-default = ["async"]
-async = ["dep:async-trait"]
+default = ["async-token-source"]
+async-token-source = ["dep:async-trait"]
 
 [dependencies]
 async-trait = { version = "0.1", optional = true }

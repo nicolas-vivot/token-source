@@ -16,20 +16,20 @@
 use std::fmt::Debug;
 use std::sync::Arc;
 
-#[cfg(feature = "async")]
+#[cfg(feature = "async-token-source")]
 use async_trait::async_trait;
 
 /// A TokenSource abstracts how a token is obtained or generated.
 ///
-/// This is where you would implement the logic to fetch a token from a local cache, or a remote server (for example requesting a new token from an OAuth2 server, like GKE metadata server).
-#[cfg(feature = "async")]
+/// This is where you would implement the logic to fetch a token from a local cache, 
+/// or a remote server (for example requesting a new token from an OAuth2 server).
+#[cfg(feature = "async-token-source")]
 #[async_trait]
 pub trait TokenSource: Send + Sync + Debug {
     /// Returns a valid token
     async fn token(&self) -> Result<String, Box<dyn std::error::Error + Send + Sync>>;
 }
-
-#[cfg(not(feature = "async"))]
+#[cfg(not(feature = "async-token-source"))]
 pub trait TokenSource: Send + Sync + Debug {
     /// Returns a valid token
     fn token(&self) -> Result<String, Box<dyn std::error::Error + Send + Sync>>;
@@ -49,6 +49,6 @@ pub struct NoopTokenSourceProvider {}
 
 impl TokenSourceProvider for NoopTokenSourceProvider {
     fn token_source(&self) -> Arc<dyn TokenSource> {
-        panic!("This is dummy token source provider. Please use any crate providing real implementation.")
+        panic!("This is dummy token source provider. Please use any crate providing a real implementation.")
     }
 }
