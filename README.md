@@ -2,6 +2,7 @@
 Providing a high level API for authentication token source providers.
 
 ![CI](https://github.com/nicolas-vivot/token-source/workflows/CI/badge.svg?branch=main)
+[![crates.io](https://img.shields.io/crates/v/token-source.svg)](https://crates.io/crates/token-source)
 
 
 
